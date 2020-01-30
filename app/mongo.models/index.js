@@ -24,7 +24,7 @@ db.connect(`mongodb+srv://cluster0-vnic8.mongodb.net/${config.database}`,{useUni
       console.log(err)
     })
 
-fs
+/*fs
   .readdirSync(__dirname)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
@@ -38,14 +38,16 @@ Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
-})
+});
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
+*/
 // Close the database connection
-b.close = async () => {
+/*db.close = async () => {
   await db.close()
-}
+}*/
+
+
 
 module.exports = db;
