@@ -1,9 +1,9 @@
 module.exports = (app, db) => {
     app.post('/post', async (req, res) => {
-      await db.Post.create({
+      const post = new db.Post({
         title: req.body.title,
-        content: req.body.content,
-        AuthorId: req.body.AuthorId,
-      }).then((result) => res.json(result))
+        content: req.body.content
+      })
+      await post.save().then( (result) => res.json(result))
     })
   }
